@@ -1,0 +1,1389 @@
+strVal = 'data science'               # 문자열 변수
+nVal = 12345                          # 정수형 변수
+fVal = 1.2                            # 실수형 변수
+lVal = ['data', 'science']            # 리스트
+dVal = {'lecture' : 'data science'}   # 딕셔너리
+bVal = True                           # 논리형 변수(참/거짓)
+
+print('strVal : ', strVal)
+print('nVal : ', nVal)
+print('fVal : ', fVal)
+print('lVal : ', lVal)
+print('dVal : ', dVal)
+print('bVal : ', bVal)
+print('strVal : ', type(strVal))
+print('nVal : ', type(nVal))
+print('fVal : ', type(fVal))
+print('lVal : ', type(lVal))
+print('dVal : ', type(dVal))
+print('bVal : ', type(bVal))
+
+print('10진수 표현 : ', nVal)       # 10진수
+print('2진수 표현 : ', bin(nVal))  # 2진수
+print('8진수 표현 : ', oct(nVal))  # 8진수
+print('16진수 표현 : ', hex(nVal))  # 16진수
+
+btVal = TRUE                          # 논리형 변수(참) - 오류
+bfVal = FALSE                         # 논리형 변수(거짓) - 오류
+
+nBig = 100
+nSmall = 10
+print(nBig == nSmall)
+print(nBig != nSmall)
+print(nBig >= nSmall)
+print(nBig <= nSmall)
+print(nBig > nSmall)
+print(nBig < nSmall)
+
+nBig = 100
+nSmall = 10
+
+print(nBig == nSmall)
+print(nBig != nSmall)
+print(nBig >= nSmall)
+print(nBig <= nSmall)
+print(nBig > nSmall)
+print(nBig < nSmall)
+
+strData = 'data'               # 문자열 변수
+strSci = "Science"             # 문자열 변수
+
+trData = 'data'               # 문자열 변수
+strSci = "Science"             # 문자열 변수
+strLecture = strData + strSci
+strLecture
+strLecture = strData +" "+ strSci
+strLecture
+
+strLecture.split()              # split()으로 공백을 기준으로 문자열 구분
+lSeperate = strLecture.split() # split()으로 공백을 기준으로 문자열 구분아혀 lSeperate 변수에 저장
+type(lSeperate)
+
+
+strHello = "안녕하세요. 반갑습니다."
+strHello.find("반갑")
+strHello.find("hello")    # 문자열이 없으면, -1을 리턴
+"반갑" in strHello          # in 명령어를 사용하여 확인 가능 : if 조건문에서 활용
+replace() 함수를 이용하여 특정 문자 또는 문자열을 원하는 문자 또는 문자열로 변환할 수 있음
+strip() 함수를 이용하여 특정 문자 또는 문자열을 제거할 수 있음
+strHello.replace('.', '?')    # .을 모두 ?로 변경
+strHello.replace('.', '?')                  
+strHello.replace("하세요", "하셔유")       # 안녕하셔유? 가 될까요?
+strHello                      # 원본 데이터는 변하지 않음
+strNewHello = strHello.replace('.', '?')                    # strHello를 replace하여 strNewHello에 저장   
+strNewHello = strNewHello.replace("하세요", "하셔유")       # strNewHello를 replace하여 strNewHello에 저장
+strNewHello
+strHello.strip('반갑습니다.')    # strip()함수를 이용하여 "반갑습니다."를 제거
+strHello                    # 역시 원본 데이터는 변하지 않음
+3. 리스트
+
+1) 리스트 개념
+
+
+
+lnData = [1,2,3,4,5]     # lnData를 리스트로 생성
+print(lnData)
+print('type : ', type(lnData))
+[1, 2, 3, 4, 5]
+type :  
+
+print(lnData[0])    # lnData 리스트의 0번 인덱스의 값 출력
+print(lnData[3])    # lnData 리스트의 3번 인덱스의 값 출력
+lnData[0] = lnData[4]   # lnData[4]의 값을 lnData[0]에 저장
+print(lnData)           # lnData 리스트를 출력
+3) 리스트 슬라이싱(Slicing)
+
+
+print(lnData[2:4])      # lnData[4]에 저장된 5는 출력되지 않음
+4) 리스트 기본 연산
+
+여러 개의 리스트를 하나의 리스트로 병합
+데이터 삽입 및 삭제
+최소값, 최대값 검색
+정렬
+
+가. 병합
+
+두 개 이상의 리스트를 하나의 리스트로 병합
+서로 다른 자료형을 가진 리스트도 가능
+lnData = [1,2,3,4,5]
+lstrData=['a', 'b', 'c']
+
+# 두 개의 서로다른 자료형을 가진 리스트를 병합
+lnData + lstrData
+나. 데이터 추가 및 삭제
+
+append(), insrt() 함수를 이용하여 데이터 추가 가능
+append()는 데이터를 무조건 리스트 맨 뒤에 추가
+insert()는 추가하는 데이터를 지정할 수 있음
+lnData.append(10)   # 10을 맨 뒤에 추가
+lnData
+lnData.insert(0, 'python')  #'python'문자열을 0번 인덱스에 추가하고, 기존 인덱스에 저장된 데이터는 하나씩 뒤로 밀림(인덱스가 +1 추가)
+lnData
+remove() 함수를 이용하여 데이터 삭제 가능
+del 명령어를 통해 인덱스를 지정하여 데이터 삭제 가능
+lnData.remove('python')     # 'python' 데이터를 삭제
+lnData
+del lnData[5]              # del 명령어를 통해 인덱스를 지정하여 삭제
+lnData
+pop() 함수를 이용하여 해당 인덱스에 해당하는 데이터를 삭제
+인덱스를 지정하지 않을 경우, Stack의 pop()과 같이 마지막 인덱스의 값을 삭제
+clear() 함수를 이용하여 리스트의 모든 데이터를 삭제
+lnData
+lnData.pop(0)     # 0번 인덱스의 데이터를 삭제
+lnData
+lnData.pop()     # 인덱스 지정이 없으면, 마지막 인덱스의 값을 삭제
+lnData
+lnData.clear()  # 리스트의 모든 데이터를 삭제
+lnData
+4. 튜플
+
+1) 튜플의 개념
+
+리스트와 유사한 구조이나, 직접 변경이 불가능하며 append(), insert()등의 함수 사용이 불가능
+리스트에 비해 접근 속도가 빠름
+image.png
+
+# 튜플의 기본 구조
+tVal = ("사과", "딸기", "바나나", "토마토", "키위")
+
+print(tVal)
+print(type(tVal))
+('사과', '딸기', '바나나', '토마토', '키위')
+
+# 튜플에 저장된 데이터는 변경이 불가능
+tVal[0] = "포도"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+ in 
+      1 # 튜플에 저장된 데이터는 변경이 불가능
+----> 2 tVal[0] = "포도"
+
+TypeError: 'tuple' object does not support item assignment
+튜플의 기본 연산
+튜플 내 데이터 개수 검색
+튜플 슬라이싱
+두 개의 튜플 데이터 병합
+튜플 데이터 반복
+가. 튜플 내 데이터 개수 검색
+
+# count() 함수를 이용하여 튜플에 저장된 특정 데이터의 개수를 확인
+tData = ( 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7)
+tData.count(1)
+3
+# len()함수를 이용하여 튜플에 저장된 전체 데이터 개수를 확인
+len(tVal)
+5
+len(tData)
+11
+나. 튜플 슬라이싱
+
+리스트와 같은 데이터의 슬라이싱이 가능
+print(tData[2:5])
+(3, 1, 2)
+다. 튜플 데이터 병합
+
+2개의 튜플 데이터를 "+" 연산자를 이용해 하나로 합칠 수 있음
+tTuple = tVal+ tData
+print(tTuple)
+('사과', '딸기', '바나나', '토마토', '키위', 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7)
+라. 튜플 데이터 반복
+
+"*" 연산자를 이용해 튜플 데이터를 반복할 수 있음
+tData * 2
+(1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7)
+tData
+(1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7)
+tData2 = tData * 2
+print(tData2)
+(1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7, 1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 7)
+print("tVal memory = ", hex(id(tVal)))
+tVal = tVal * 2
+print("tVal memory = ", hex(id(tVal)))
+print(tVal)
+tVal memory =  0x3579020
+tVal memory =  0x4276c20
+('사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤')
+print("tVal memory = ", hex(id(tVal)))
+tVal = tVal + tVal
+print("tVal memory = ", hex(id(tVal)))
+print(tVal)
+tVal memory =  0x4276c20
+tVal memory =  0x3ccc820
+('사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '사과', '딸기', '바나나', '토마토', '키위', '귤', '귤', '귤')
+5. 셋(Set)
+
+1) 셋의 개념
+
+수학의 집합
+순서에 상관없이 중복을 허용하지 않음
+image.png
+
+sVal = {1, 2, 3, 4, 5}
+print(sVal)
+print(type(sVal))
+{1, 2, 3}
+
+
+sVal[1:2]
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+ in 
+----> 1 sVal[1:2]
+
+TypeError: 'set' object is not subscriptable
+2) 기본 연산
+
+데이터 추가
+데이터 업데이트
+데이터 삭제
+데이터 초기화
+# add 함수를 이용하여 데이터를 추가할 수 있음
+sVal.add(100)
+print(sVal)
+{1, 2, 3, 100}
+# update 함수를 이용하여 여러개의 데이터를 추가할 수 있음
+sVal.update([200, 300])
+print(sVal)
+{1, 2, 3, 100, 200, 300}
+# remove 함수를 이용하여 데이터를 삭제할 수 있음
+sVal.remove(200)
+print(sVal)
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+ in 
+      1 # remove 함수를 이용하여 데이터를 삭제할 수 있음
+----> 2 sVal.remove(200)
+      3 print(sVal)
+
+KeyError: 200
+# clear() 함수를 이용하여 데이터를 초기화 할 수 있음
+sVal.clear()
+print(sVal)
+set()
+3) 집합 연산
+
+교집합
+차집합
+합집합
+합집합에서 교집합을 뺀 집합
+sVal = {100, 200, 300, 400, 500}
+sData = {"a", "b", "c", "c", 100, 300}
+print(sVal)
+print(sData)
+{100, 200, 300, 400, 500}
+{100, 'b', 300, 'c', 'a'}
+# intersection() 함수를 이용하여 교집합을 만들 수 있음
+sVal.intersection(sData)
+{100, 300}
+# deference() 함수를 이용하여 차집합을 만들 수 있음
+sVal.difference(sData)
+{200, 400, 500}
+# "-" 연산자로도 가능
+sVal - sData
+{200, 400, 500}
+# union() 함수를 이용하여 합집합을 만들 수 있음
+sVal.union(sData)
+{100, 200, 300, 400, 500, 'a', 'b', 'c'}
+# "+"연산자는 불가능
+sVal + sData
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+ in 
+      1 # "+"연산자로도 가능
+----> 2 sVal + sData
+
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+# symetric_difference()를 이용하여 합집합에서 교집합을 뺀 집합을 만들 ㅅ ㅜ있음
+sVal.symmetric_difference(sData)
+{200, 400, 500, 'a', 'b', 'c'}
+6. 딕셔너리
+
+1) 딕셔너리 개념
+
+사전의 단어와 설명과 유사하게 키(Key)와 값(Value)로 표현한 구조
+# 딕셔너리 기본 구조는 다음과 같이 표현할 수 있음
+dVal = {
+    'name' : '이컴공',
+    'email' : 'computer@hoseo.edu',
+    'address' : '충남 아산시'
+}
+print(dVal)
+print(type(dVal))
+{'name': '이컴공', 'email': 'computer@hoseo.edu', 'address': '충남 아산시'}
+
+2) 기본 연산
+
+항목 검색
+항목 추가
+항목 삭제
+항목 정렬
+dData = {
+    "사과" : 300, 
+    "포도" : 200, 
+    "배" : 500,
+    "키위" : 100
+}
+# 키를 이용한 항목 검색
+print(dData["배"])
+500
+# get() 함수를 이용한 항목 검색
+dData.get("배")
+500
+# 새로운 키 추가를 통한 항목 추가
+dData["딸기"] = 100
+print(dData)
+{'사과': 300, '포도': 200, '배': 500, '키위': 100, '딸기': 100}
+# pop을 이용한 항목 삭제
+dData.pop("사과")
+300
+dData
+{'포도': 200, '배': 500, '키위': 100, '딸기': 100}
+dData.pop()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+ in 
+----> 1 dData.pop()
+
+TypeError: pop expected at least 1 arguments, got 0
+# sorted 함수를 이용한 정렬
+sorted(dData)
+['딸기', '배', '키위', '포도']
+# sorted와 values 함수를 이용하여 값을 정렬할 수 있음
+sorted(dData.values())
+[100, 100, 200, 500]
+# 실제 dData는 변화가 없음
+dData
+{'포도': 200, '배': 500, '키위': 100, '딸기': 100}
+7. 함수
+
+1) 함수의 개념
+
+재사용 가능한 프로그램
+def를 통해 함수를 정의하고, return을 사용해 값을 반환
+들여쓰기 4칸 중요
+
+image.png
+
+# 함수 f(x)를 생성하고 x 값을 입력으로 받음
+def f(x):
+  # x에 10을 더한 값을 출력
+  return x + 10
+f(2)
+12
+
+lVal = [1.0, 2.0, 3.14, 4.2, 5.1]  # 실수 list를 생성
+# flVal 3개를 리스트로 구성하여 arVal 다차원 배열을 생성
+arVal = [flVal, flVal, flVal]
+arVal
+[[1.0, 2.0, 3.14, 4.2, 5.1],
+ [1.0, 2.0, 3.14, 4.2, 5.1],
+ [1.0, 2.0, 3.14, 4.2, 5.1]]
+# arVal은 다차원 배열이므로, arVal[n] 인덱스 연산을 통해 n차원 배열 값을 출력
+arVal[0]
+[1.0, 2.0, 3.14, 4.2, 5.1]
+arVal[1]
+[1.0, 2.0, 3.14, 4.2, 5.1]
+arVal[1][2]
+3.14
+# 1 차원 값을 변환하여 다른 값을 대입 했을때의 다차원 배열
+arVal[0] = 'python'
+arVal
+['python', [1.0, 2.0, 3.14, 4.2, 5.1], [1.0, 2.0, 3.14, 4.2, 5.1]]
+arVal[0][2]
+'t'
+arVal[0] = 'python programming'
+arVal
+['python programming', [1.0, 2.0, 3.14, 4.2, 5.1], [1.0, 2.0, 3.14, 4.2, 5.1]]
+NumPy 배열
+NumPy.ndarray 클래스에서 배열 타입을 지원
+NumPy.ndarray 클래스는 n-차원 바열을 쉽고 효율적으로 다룰 수 있도록 지원
+# numpy 패치지를 import 
+import numpy as np
+arData = np.array([1.0, 2.0, 3.14, 4.2, 5.1])
+arData
+array([1.  , 2.  , 3.14, 4.2 , 5.1 ])
+다양한 NumPy 배열 함수들
+# 배열 각 요소의 합을 출력
+arData.sum()
+15.44
+arVal.sum()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+ in 
+----> 1 arVal.sum()
+
+AttributeError: 'list' object has no attribute 'sum'
+print(type(arVal))
+print(type(arData))
+
+# 배열에 대한 표준편차 출력
+arData.std()
+1.4717934637713266
+# 배열의 누적 합을 출력
+arData.cumsum()
+array([ 1.  ,  3.  ,  6.14, 10.34, 15.44])
+벡터화된 NumPy 배열 수학 연산을 지원
+arData * 2
+array([ 2.  ,  4.  ,  6.28,  8.4 , 10.2 ])
+arData ** 2 # 2를 제곱
+array([ 1.    ,  4.    ,  9.8596, 17.64  , 26.01  ])
+# 루트를 적용한 값을 출력
+np.sqrt(arData)
+array([1.        , 1.41421356, 1.77200451, 2.04939015, 2.25831796])
+axis 축을 기준으로 합계 표현
+NumPy.ndarray 클래스에서는 각 차원의 축을 명시하여 특정한 열을 선택할 수 있도록 지원
+arVal = np.array([arData, arData ** 2])
+arVal
+array([[ 1.    ,  2.    ,  3.14  ,  4.2   ,  5.1   ],
+       [ 1.    ,  4.    ,  9.8596, 17.64  , 26.01  ]])
+arVal.sum(axis=0) # 축(axis)이 0일 경우 세로 축의 합을 출력
+array([ 2.    ,  6.    , 12.9996, 21.84  , 31.11  ])
+arVal.sum(axis=1) # 축(axis)이 0일 경우 가로 축의 합을 출력
+array([15.44  , 58.5096])
+NumPy.zeros를 이용하여 0 행렬을 만들 수 있음
+# NumPy.array를 사용한 코드
+np.array([[0,0,0],[0,0,0]])
+array([[0, 0, 0],
+       [0, 0, 0]])
+# NumPy.zeros를 사용한 코드
+arZero = np.zeros((2,3), dtype = 'i') 
+arZero
+array([[0, 0, 0],
+       [0, 0, 0]], dtype=int32)
+       
+       import pandas as pd
+
+pandas_series = pd.Series([30, 20, 10], index=['국어', '영어', '수학'])
+print(type(pandas_series))
+pandas_series
+국어    30
+영어    20
+수학    10
+dtype: int64
+pandas_series[1:]
+영어    20
+수학    10
+dtype: int64
+pandas_series[0]
+30
+pandas_series[0][1]
+
+df = pd.DataFrame([30,20,10], columns=['score'], index=['국어', '영어', '수학'])
+df
+score
+국어	30
+영어	20
+수학	10
+# DataFrame의 index를 표시
+df.index
+Index(['국어', '영어', '수학'], dtype='object')
+# DataFrame의 column을 표시
+df.columns
+Index(['score'], dtype='object')
+# DataFrame의index 중에서 국어에 해당하는 값을 출력
+df.loc['국어']   # ix 함수가 최근 제거되어 loc를 써야 동작
+score    30
+Name: 국어, dtype: int64
+# DataFrame의 값을 모두 합한 결과를 출력
+df.sum()
+score    60
+dtype: int64
+# DataFrame의 각 colimn 값의 제곱을 출력
+df.score ** 2
+국어    900
+영어    400
+수학    100
+Name: score, dtype: int64
+# DataFrame에 score2 라는 칼럼을 추가하고 값을 입력
+df['score2'] = (50, 50, 50)
+df
+score	score2
+국어	30	50
+영어	20	50
+수학	10	50
+# DataFrame 함수를 이용하여 column을 추가할 수 있음
+df['score2'] = pd.DataFrame([90,90,90], index=['국어', '영어', '수학'])
+df
+score	score2
+국어	30	90
+영어	20	90
+수학	10	90
+# column 삭제
+del df['score']
+# index 를 맞추기 않았을 경우
+df['score2'] = (90, 90, 90, 100)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+ in 
+      1 # index 를 맞추기 않았을 경우
+----> 2 df['score2'] = (90, 90, 90, 100)
+
+/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py in __setitem__(self, key, value)
+   3610         else:
+   3611             # set column
+-> 3612             self._set_item(key, value)
+   3613 
+   3614     def _setitem_slice(self, key: slice, value):
+
+/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py in _set_item(self, key, value)
+   3782         ensure homogeneity.
+   3783         """
+-> 3784         value = self._sanitize_column(value)
+   3785 
+   3786         if (
+
+/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py in _sanitize_column(self, value)
+   4507 
+   4508         if is_list_like(value):
+-> 4509             com.require_length_match(value, self.index)
+   4510         return sanitize_array(value, self.index, copy=True, allow_2d=True)
+   4511 
+
+/usr/local/lib/python3.7/dist-packages/pandas/core/common.py in require_length_match(data, index)
+    530     if len(data) != len(index):
+    531         raise ValueError(
+--> 532             "Length of values "
+    533             f"({len(data)}) "
+    534             "does not match length of index "
+
+ValueError: Length of values (4) does not match length of index (3)
+# index 를 맞추기 않았을 경우
+df['score2'] = pd.DataFrame([90, 90, 90, 100], index=['국어', '영어', '수학', '윤리'])
+df
+score	score2
+국어	30	90
+영어	20	90
+수학	10	90
+# join() 함수를 이용하여 2개의 DataFrame을 하나로 합칠 수 있음
+df1 = pd.DataFrame([1, 2, 3], columns = ['A'])
+df2 = pd.DataFrame([10, 11, 12, 13], columns = ['B'])
+
+df = df1.join(df2, how='outer')
+df
+A	B
+0	1.0	10
+1	2.0	11
+2	3.0	12
+3	NaN	13
+df_inner = df1.join(df2, how='inner')
+df_inner
+A	B
+0	1	10
+1	2	11
+2	3	12
+# 난수를 이용한 임의의 값 생성
+df = pd.DataFrame(np.random.randn(5,5))
+df.columns = ['A', 'B', 'C', 'D', 'E']
+
+df
+A	B	C	D	E
+0	0.543405	-0.847763	0.681296	-0.093539	0.952255
+1	-1.153325	0.120657	0.505057	0.614817	0.624625
+2	-2.378809	1.702129	-0.838859	0.903119	-0.270950
+3	-2.370525	1.028808	-0.503830	1.054736	0.271516
+4	-0.425577	-0.499254	2.448141	0.545844	0.563218
+# 최대값
+df.max()
+A    0.543405
+B    1.702129
+C    2.448141
+D    1.054736
+E    0.952255
+dtype: float64
+# 최소값
+df.min()
+A   -2.378809
+B   -0.847763
+C   -0.838859
+D   -0.093539
+E   -0.270950
+dtype: float64
+# 평균
+df.mean()
+A   -1.156966
+B    0.300915
+C    0.458361
+D    0.604995
+E    0.428133
+dtype: float64
+# 표준편차
+df.std()
+A    1.264103
+B    1.058944
+C    1.286438
+D    0.442349
+E    0.459567
+dtype: float64
+# 누적값
+df.cumsum()
+A	B	C	D	E
+0	0.543405	-0.847763	0.681296	-0.093539	0.952255
+1	-0.609920	-0.727106	1.186354	0.521278	1.576880
+2	-2.988729	0.975023	0.347494	1.424397	1.305930
+3	-5.359254	2.003831	-0.156335	2.479133	1.577446
+4	-5.784831	1.504576	2.291805	3.024976	2.140664
+# DataFrame의 통계적 요약
+df.describe()
+A	B	C	D	E
+count	5.000000	5.000000	5.000000	5.000000	5.000000
+mean	-1.156966	0.300915	0.458361	0.604995	0.428133
+std	1.264103	1.058944	1.286438	0.442349	0.459567
+min	-2.378809	-0.847763	-0.838859	-0.093539	-0.270950
+25%	-2.370525	-0.499254	-0.503830	0.545844	0.271516
+50%	-1.153325	0.120657	0.505057	0.614817	0.563218
+75%	-0.425577	1.028808	0.681296	0.903119	0.624625
+max	0.543405	1.702129	2.448141	1.054736	0.952255
+# Group by를 이용한 DataFrame의 그룹화
+df['division'] = ['X', 'Y', 'X', 'Y', 'Z']
+df
+A	B	C	D	E	division
+0	0.543405	-0.847763	0.681296	-0.093539	0.952255	X
+1	-1.153325	0.120657	0.505057	0.614817	0.624625	Y
+2	-2.378809	1.702129	-0.838859	0.903119	-0.270950	X
+3	-2.370525	1.028808	-0.503830	1.054736	0.271516	Y
+4	-0.425577	-0.499254	2.448141	0.545844	0.563218	Z
+df.groupby(['division']).mean()
+A	B	C	D	E
+division					
+X	-0.917702	0.427183	-0.078781	0.404790	0.340652
+Y	-1.761925	0.574732	0.000614	0.834776	0.448070
+Z	-0.425577	-0.499254	2.448141	0.545844	0.563218
+
+
+import pandas as pd
+
+sr = pd.Series([100, 200, 300, 400])
+sr.index = ['A', 'B', 'O', 'AB']
+sr
+A     100
+B     200
+O     300
+AB    400
+dtype: int64
+sr1 = pd.Series([10, 20, 30])
+sr1
+0    10
+1    20
+2    30
+dtype: int64
+DataFrame : 행과 열로 이루어진 2차원 데이터 구조로 index, column 이름 또는 행, 열의 시퀀스 번호로 데이터에 접근
+df = pd.DataFrame({'키':[170, 180, 175], '몸무게':[65, 78, 70]})
+df.index = ['스파이더맨', '닥터스트레인지', '아이언맨']
+df
+키	몸무게
+스파이더맨	170	65
+닥터스트레인지	180	78
+아이언맨	175	70
+1) 구글 드라이버에 파일 업로드
+
+2) CSV 파일 읽기
+
+pd.read_csv('파일명', encoding = "옵션값")으로 csv 파일을 읽어들이며, 한글이 있는 경우에 encodeing = 'cp949'로 설정
+df = pd.read_csv('scores.csv', encoding='cp949')
+df
+이름	국어	영어	수학
+0	tony	100.0	90	95.0
+1	sam	90.0	80	75.0
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+4	scott	NaN	35	60.0
+5	tor	70.0	75	65.0
+6	bruce	80.0	90	55.0
+7	thor	50.0	60	NaN
+8	steaven	100.0	100	90.0
+9	wanda	90.0	95	70.0
+3)데이터 정보 확인
+
+데이터프레임객체.head(n) : 상위 n개 행 보기 (n을 생략하면 디폴트 5개 출력)
+데이터프레임객체.tail(n) : 하위 n개 행 보기 (n을 생략하면 디폴트 5개 출력)
+데이터프레임객체.sample(n) : 랜덤 n개 행 보기 (n을 생략하면 디폴트 1개 출력)
+데이터프레임객체.info() : 데이터프레임의 전반적인 정보 출력
+데이터프레임객체.shape : 데이터프레임의 행,열의 크기 출력
+len(데이터프레임객체) : 데이터프레임의 행의 개수 출력
+df.head()
+이름	국어	영어	수학
+0	tony	100.0	90	95.0
+1	sam	90.0	80	75.0
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+4	scott	NaN	35	60.0
+df.tail()
+이름	국어	영어	수학
+5	tor	70.0	75	65.0
+6	bruce	80.0	90	55.0
+7	thor	50.0	60	NaN
+8	steve	100.0	100	90.0
+9	wanda	90.0	95	70.0
+df.sample(3)
+이름	국어	영어	수학
+9	wanda	90.0	95	70.0
+6	bruce	80.0	90	55.0
+1	sam	90.0	80	75.0
+df.info()
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 4 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   이름      10 non-null     object 
+ 1   국어      9 non-null      float64
+ 2   영어      10 non-null     int64  
+ 3   수학      9 non-null      float64
+dtypes: float64(2), int64(1), object(1)
+memory usage: 448.0+ bytes
+df.shape
+(10, 4)
+len(df)
+10
+4) 결측값 분석 및 처리
+
+데이터프레임객체. isnull().sum() : 데이터프레임의 컬럼 별 결측치의 개수 추출
+데이터프레임객체.dropna() : 결측치가 존재하는 행 삭제
+데이터프레임객체.fillna(값) : 결측치를 특정 값으로 대체
+df.isnull().sum()
+이름    0
+국어    1
+영어    0
+수학    1
+dtype: int64
+df_dropna = df.dropna()
+df_dropna
+이름	국어	영어	수학
+0	tony	100.0	90	95.0
+1	sam	90.0	80	75.0
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+5	tor	70.0	75	65.0
+6	bruce	80.0	90	55.0
+8	steaven	100.0	100	90.0
+9	wanda	90.0	95	70.0
+df_fillna = df.fillna(50)
+df_fillna
+이름	국어	영어	수학
+0	tony	100.0	90	95.0
+1	sam	90.0	80	75.0
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+4	scott	50.0	35	60.0
+5	tor	70.0	75	65.0
+6	bruce	80.0	90	55.0
+7	thor	50.0	60	50.0
+8	steaven	100.0	100	90.0
+9	wanda	90.0	95	70.0
+5) 통계 정보 확인
+
+데이터프레임객체.describe() : 숫자형 데이터의 요약통계 보기
+데이터프레임객체[컬럼].통계함수 : 컬럼별 특정 통계값 보기
+통계함수 : 합계:sum(), 평균:mean(), 중간값:median(), 최소값:min(), 최대값:max(), 개수:count(), 최빈값:mode(), 표준편차:std(), 분산:var(), 백분위수:quantile() 등
+데이터프레임객체.value_counts(컬럼명) : 컬럼별 값의 갯수
+df.describe()
+국어	영어	수학
+count	9.000000	10.000000	9.000000
+mean	86.111111	82.500000	78.888889
+std	16.914819	21.114766	17.638342
+min	50.000000	35.000000	55.000000
+25%	80.000000	76.250000	65.000000
+50%	90.000000	90.000000	75.000000
+75%	100.000000	98.750000	95.000000
+max	100.000000	100.000000	100.000000
+df['국어'].sum()
+775.0
+df.value_counts('영어')
+영어
+100    3
+90     2
+35     1
+60     1
+75     1
+80     1
+95     1
+dtype: int64
+6) 데이터 추출 - 인덱스와 컬럼명으로 추출
+
+데이터프레임객체[컬럼명] : 한 개의 컬럼을 Series 형태로 추출 (예) df[‘이름’]
+데이터프레임객체[컬럼명리스트] : 한 개 이상의 컬럼을 DataFrame 형태로 추출
+(예) df[[‘이름’]], df[[‘국어’, ‘영어’]]
+
+데이터프레임객체.loc[인덱스] 또는 데이터프레임객체.loc[인덱스리스트] : 특정 행의 모든 컬럼 추출
+
+데이터프레임객체.loc[인덱스,컬럼명] 또는 데이터프레임객체.loc[인덱스리스트,컬럼명리스트] : 특정 행의 특정 컬럼 추출
+
+df['국어']
+0    100.0
+1     90.0
+2     95.0
+3    100.0
+4      NaN
+5     70.0
+6     80.0
+7     50.0
+8    100.0
+9     90.0
+Name: 국어, dtype: float64
+df[['국어', '영어']]
+국어	영어
+0	100.0	90
+1	90.0	80
+2	95.0	100
+3	100.0	100
+4	NaN	35
+5	70.0	75
+6	80.0	90
+7	50.0	60
+8	100.0	100
+9	90.0	95
+df.loc[1]
+이름     sam
+국어    90.0
+영어      80
+수학    75.0
+Name: 1, dtype: object
+df.loc[[1,2,3]]
+이름	국어	영어	수학
+1	sam	90.0	80	75.0
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+7) 데이터 추출 - 행시퀀스와 열시퀀스로 추출
+
+
+df.iloc[2]
+이름    vision
+국어      95.0
+영어       100
+수학     100.0
+Name: 2, dtype: object
+df.iloc[2:5]
+이름	국어	영어	수학
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+4	scott	NaN	35	60.0
+# 시퀀스가 아니라 인덱스로 추출
+df.loc[2:5]
+이름	국어	영어	수학
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+4	scott	NaN	35	60.0
+5	tor	70.0	75	65.0
+df
+이름	국어	영어	수학
+0	tony	100.0	90	95.0
+1	sam	90.0	80	75.0
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+4	scott	NaN	35	60.0
+5	tor	70.0	75	65.0
+6	bruce	80.0	90	55.0
+7	thor	50.0	60	NaN
+8	steve	100.0	100	90.0
+9	wanda	90.0	95	70.0
+df.iloc[1,3]
+75.0
+df.iloc[1:3, 1:3]
+국어	영어
+1	90.0	80
+2	95.0	100
+
+!sudo apt-get install -y fonts-nanum
+!sudo fc-cache -fv
+!rm ~/.cache/matplotlib -rf
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+fonts-nanum is already the newest version (20170925-1).
+The following package was automatically installed and is no longer required:
+  libnvidia-common-460
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 20 not upgraded.
+/usr/share/fonts: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/truetype: caching, new cache contents: 0 fonts, 3 dirs
+/usr/share/fonts/truetype/humor-sans: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/truetype/liberation: caching, new cache contents: 16 fonts, 0 dirs
+/usr/share/fonts/truetype/nanum: caching, new cache contents: 10 fonts, 0 dirs
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 0 dirs
+/root/.local/share/fonts: skipping, no such directory
+/root/.fonts: skipping, no such directory
+/var/cache/fontconfig: cleaning cache directory
+/root/.cache/fontconfig: not cleaning non-existent cache directory
+/root/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+
+%matplotlib inline
+
+
+# matplotlib 한글폰트 지정
+plt.rc('font', family='NanumBarunGothic')
+
+# - 기호 깨짐 오류 방지
+plt.rc('axes', unicode_minus = False)
+간단한 선 그래프(꺽은선 그래프)
+# x측
+x = ['1월', '2월', '3월', '4월', '5월']
+y = [7, 10, 17, 20, 23]
+
+# 그래프
+plt.plot(x,y)
+plt.show()
+
+그래프 옵션 설정
+# x측
+x = ['1월', '2월', '3월', '4월', '5월']
+y = [7, 10, 17, 20, 23]
+
+# 그래프
+plt.plot(x,y, color="blue", marker = 'o', linestyle = ':')
+plt.title('월별 평균 온도', fontsize=15)
+plt.ylabel('온도(도)')
+plt.grid(linestyle = ':')
+plt.show()
+
+numpy.random : numpy의 랜덤 값 생성 관련 함수를 모아놓은 패키지
+numpy.random.standard_normal() : 표준 정규 분포를 따르는 랜덤 값을 생성하는 함수
+# 40개의 임의의 랜덤값을 생성
+aVal = np.random.standard_normal(40)
+aVal
+array([ 0.97669236,  0.4529452 ,  0.01017419, -0.24539115,  0.73152033,
+        0.18524901, -0.73820598, -0.71379987, -0.23615911, -1.31289966,
+        0.9197316 ,  1.13695107, -0.61156098,  0.3066053 ,  0.51947131,
+        1.13280581, -1.98438712, -1.07534015,  0.33402174,  0.74989487,
+        0.7316359 , -1.11905618, -0.33924779,  0.15712301, -0.75058607,
+       -1.83511344, -0.49734301,  0.37043088,  1.13427592, -0.19028935,
+       -0.10737085, -0.0645861 ,  0.31022678,  0.6034183 ,  0.81656515,
+        1.86232912, -0.25848162,  0.87650477, -0.59008705,  2.73636942])
+# type 확인
+# 40개의 랜덤값으로 이루어진 numpy.ndarray형 변수
+type(aVal)
+numpy.ndarray
+line plot 그리기 및 x/y 축 범위 설정
+
+index (x축 데이터) : 0 부터 “value 변수 데이터 길이 -1”까지의 연속적인 값들로 이루어진 range 형 변수
+
+pyplot.plot() : 선이나 마커를 플롯하는 함수
+
+pyplot.xlim() : x축의 범위를 설정하는 함수
+
+pyplot.ylim() : y축의 범위를 설정하는 함수
+
+numpy.min() : 값들 중 최소값을 구하는 함수
+
+numpy.max() : 값들 중 최대값을 구하는 함수
+
+index = range(len(aVal))
+plt.plot(index, aVal)
+
+# x축, y축의 범위 설정
+plt.xlim(0, 20)
+plt.ylim(np.min(aVal) -1, np.max(aVal) + 1)
+plt.show()
+
+# index는 range 형 변수
+type(index)
+range
+Plot 옵션 설정 및 꾸미기
+
+pyplot.figure() : plot의 새로운 figure(모양)을 생성하는 함수
+numpy.cumsum() : 누적 합계를 구하는 함수
+pyplot.xlabel() : x축의 이름을 설정하는 함수
+pyplot.ylabel() : y축의 이름을 설정하는 함수
+pyplot.title() : 플롯의 제목을 설정하는 함수
+plt.figure(figsize=(7,4))
+plt.plot(aVal.cumsum(), 'b', lw= 1.5)
+plt.plot(aVal.cumsum(), 'ro')
+plt.xlabel('index')
+plt.ylabel('aVal')
+plt.title('Line Plot')
+plt.show()
+
+image.png
+
+image.png
+
+출처 : https://matplotlib.org/api/pyplot_api.html
+
+여러 개의 line plot 그리기**
+
+랜덤 값으로 이루어진 2차원 배열 변수 생성하기
+value (y축 데이터) : 30 x 2개의 랜덤 값들로 이루어진 정규표준분포를 따르는 numpy.ndarray형 변수
+value = np.random.standard_normal((30, 2))
+value
+array([[ 0.45025601, -2.7579364 ],
+       [-1.67291231,  0.96844704],
+       [-0.12411164, -0.52569227],
+       [ 0.46591578,  0.00886603],
+       [-0.71571157, -0.34976337],
+       [-0.20652222,  0.98637655],
+       [ 0.16219048, -1.27294345],
+       [-0.20298361, -0.07761235],
+       [ 1.2680536 , -0.08039035],
+       [-0.99965499, -0.338902  ],
+       [ 0.49999547,  1.34071731],
+       [ 0.20284437, -0.70435528],
+       [-0.02149775, -0.67848081],
+       [-0.46731862, -0.08338522],
+       [-0.54700744,  0.56984412],
+       [-1.11610129, -1.02884805],
+       [ 1.79065581,  0.34072526],
+       [-1.36308505, -0.0717479 ],
+       [ 0.88880772, -2.18287783],
+       [ 0.23135985, -3.16412082],
+       [-0.29512126, -2.17293634],
+       [ 0.60483072,  0.25152731],
+       [ 0.63617923, -2.49594214],
+       [ 0.54601895,  0.25902327],
+       [ 1.5912826 ,  0.8669159 ],
+       [-0.94312064, -1.24821343],
+       [ 0.6631873 , -0.2957744 ],
+       [ 0.39145823,  0.26384245],
+       [-0.1559398 , -0.56512562],
+       [-1.8076179 , -0.54319134]])
+value[0]
+array([ 0.45025601, -2.7579364 ])
+한번에 그래프에 그리기
+하나의 plot 그래프 안에 두 개의 데이터 셋이 독립적으로 그려짐
+각각의 데이터 셋에 라벨을 붙여서 구분
+pyplot.grid() : grid(격자)로 표시 유무 설정
+pyplot.legend() : 범례 표시 함수
+plt.figure(figsize=(10,4))
+plt.plot(value[:,0], lw= 1.5)
+plt.plot(value[:,1], lw= 1.5)
+plt.plot(value, 'ro')
+plt.grid(True)
+# plt.legend(loc=0)
+plt.xlabel('index')
+plt.ylabel('value')
+plt.title('Line Plot')
+Text(0.5, 1.0, 'Line Plot 2')
+
+데이터 별로 각각 그리기
+subplot() 함수를 이용해 두 개의 plot을 배열 형태로 분리
+pyplot.subplot(nrows ncols plot_number) : 서브플롯을 반환하는 함수
+nrows : 전체 서브플롯 행 개수
+ncols : 전체 서브플롯 열 개수
+plot_number : 특정 플롯의 번호 ex) subplot(211) : 2x1개의 서브플롯으로 이루어진 플롯의 첫 번째 서브플롯
+# 1번째
+plt.figure(figsize=(10,5))
+plt.subplot(211)
+plt.plot(value[:,0], lw = 1.5, label = '1st')
+plt.plot(value[:,0], 'ro')
+plt.grid(True)
+plt.legend(loc = 0)
+plt.ylabel("value")
+plt.title('Line Plot 3')
+# 2번째
+plt.subplot(212)
+plt.plot(value[:,1], 'g', lw = 1.5, label = '2nd')
+plt.grid(True)
+plt.legend(loc=0)
+plt.axis('tight')
+plt.ylabel('value')
+Text(0, 0.5, 'value')
+
+6개의 서로 다른 모양의 서브 플롯 그리기
+# 1번째
+plt.figure(figsize=(13,5))
+plt.subplot(231)
+plt.plot(value[:,0], lw= 1.5, label = '1st')
+plt.plot(value[:,0], 'co')
+plt.grid(True)
+plt.legend(loc=0)
+plt.ylabel('value')
+plt.title('Line Plot 3')
+# 2번째
+plt.subplot(232)
+plt.plot(value[:,0], 'g-.', lw=1.5, label='1st')
+plt.grid(True)
+plt.legend(loc=0)
+plt.axis('tight')
+plt.ylabel('value')
+# 3번째
+plt.subplot(233)
+plt.plot(value[:,0], 'g', lw=1.5, label='1st')
+plt.plot(value[:,0], 'bD')
+plt.grid(True)
+plt.legend(loc=0)
+plt.axis('tight')
+plt.ylabel('value')
+# 4번째
+plt.subplot(234)
+plt.plot(value[:,1], '*', lw=1.5, label='2nd')
+plt.grid(True)
+plt.legend(loc=0)
+plt.axis('tight')
+plt.ylabel('value')
+# 5번째
+plt.subplot(235)
+plt.plot(value[:,1], 'b', lw=1.5, label='2nd')
+plt.plot(value[:,1], 'ms')
+plt.grid(True)
+plt.legend(loc=0)
+plt.axis('tight')
+plt.ylabel('value')
+# 6번째
+plt.subplot(236)
+plt.plot(value[:,1], 'r--', lw=1.5, label='2nd')
+plt.grid(True)
+plt.legend(loc=0)
+plt.axis('tight')
+plt.ylabel('value')
+Text(0, 0.5, 'value')
+
+4) bar plot(막대 그래프)
+
+# x측
+x = ['1월', '2월', '3월', '4월', '5월']
+y = [7, 10, 17, 20, 23]
+
+# 그래프
+plt.bar(x,y)
+plt.show()
+
+가로 막대 그래프
+# x측
+x = ['1월', '2월', '3월', '4월', '5월']
+y = [7, 10, 17, 20, 23]
+
+# 그래프
+plt.barh(x,y)
+plt.show()
+
+그래프 옵션 설정
+# x측
+x = ['1월', '2월', '3월', '4월', '5월']
+y = [7, 10, 17, 20, 23]
+
+# 그래프
+plt.bar(x,y, color="orange", width = 0.5, edgecolor = 'black', hatch = '/')
+plt.title('월별 평균 온도', fontsize=15)
+plt.ylabel('온도(도)')
+plt.grid(linestyle = ':', axis = 'y')
+plt.show()
+
+scores.csv 데이터 그래프
+# pandas를 import
+import pandas as pd
+
+# score.csv 파일 일기
+df = pd.read_csv('scores.csv', encoding='cp949')
+df
+이름	국어	영어	수학
+0	tony	100.0	90	95.0
+1	sam	90.0	80	75.0
+2	vision	95.0	100	100.0
+3	peter	100.0	100	100.0
+4	scott	NaN	35	60.0
+5	tor	70.0	75	65.0
+6	bruce	80.0	90	55.0
+7	thor	50.0	60	NaN
+8	steaven	100.0	100	90.0
+9	wanda	90.0	95	70.0
+x = df['이름']
+y_kor = df['국어']
+
+plt.bar(x, y_kor)
+plt.show()
+
+bar plot을 활용한 국어, 영어 점수 비교
+x = df['이름']
+y_kor = df['국어']
+y_eng = df['영어']
+
+# 중심을 기준으로 왼쪽/오른쪽에 그래프를 구성
+plt.bar(x, y_kor, width = -0.4, align = 'edge', label = '국어')
+plt.bar(x, y_eng, width = 0.4, align = 'edge', label = '영어')
+plt.title('국어/영어 점수 비교', fontsize = 15)
+plt.ylabel('점수')
+
+# 범례
+plt.legend() 
+plt.show()
+
+5) scatter plot(산점도)
+
+랜덤 값들로 이루어진 2차원 배열 변수 생성
+
+pyplot.plot() 함수를 사용
+
+변수 설명
+
+value (y축 데이터) : 500 x 2개의 표준정규분포를 따르는 랜덤 값들로 이루어진 numpy.ndarray형 변수
+value = np.random.standard_normal((500,2))
+plt.plot(value[:,0], value[:,1], 'ro')
+plt.grid(False)
+plt.xlabel('value 1')
+plt.ylabel('value 2')
+plt.title('Scatter Plot 1')
+Text(0.5, 1.0, 'Scatter Plot 1')
+
+pyplot.scatter() 함수 사용
+함수 설명
+pyplot.scatter() : x 변수 대 y 변수의 산점도를 만드는 함수
+plt.figure(figsize=(7,5))
+plt.scatter(value[:,0], value[:,1], marker='o')
+plt.grid(True)
+plt.xlabel('value 1')
+plt.ylabel('value 2')
+plt.title('Scatter Plot 2')
+Text(0.5, 1.0, 'Scatter Plot 2')
+
+C 옵션을 사용한 산점도 색상 설정
+
+변수 설명
+
+color : 0에서 10사이의 정수 중 value 변수데이터 길이만큼의 값들로 이루어진 numpy.ndarray형 변수
+함수 설명
+
+numpy.random.randint() : 정수로 이루어진 랜덤 값들을 생성하는 함수
+pyplot.colorbar() : 플롯에 색깔막대기를 추가하는 함수
+color = np.random.randint(0,10,len(value))
+
+plt.figure(figsize=(10,5))
+plt.scatter(value[:,0], value[:,1], c=color, marker = 'o')
+plt.colorbar()
+plt.xlabel('value 1')
+plt.ylabel('value 2')
+plt.title('Scatter Plot 3')
+Text(0.5, 1.0, 'Scatter Plot 3')
+
+(7) Seaborn(Statistical Data Visualization)
+
+Matplotlib를 기반으로 하는 Python 시각화 패키지
+
+통계적 그래픽을 제공하는 고차원의 인터페이스 제공
+
+공식 홈페이지 URL : https://seaborn.pydata.org/
+
+Seaborn 설치 및 사용
+
+https://seaborn.pydata.org/installing.html : 라이브러리 설치
+https://seaborn.pydata.org/examples/anscombes_quartet.html : 예제 샘플 코드
+https://seaborn.pydata.org/tutorial.html : seaborn 튜토리얼
+import seaborn as sns
+df = sns.load_dataset('tips')
+df
+total_bill	tip	sex	smoker	day	time	size
+0	16.99	1.01	Female	No	Sun	Dinner	2
+1	10.34	1.66	Male	No	Sun	Dinner	3
+2	21.01	3.50	Male	No	Sun	Dinner	3
+3	23.68	3.31	Male	No	Sun	Dinner	2
+4	24.59	3.61	Female	No	Sun	Dinner	4
+...	...	...	...	...	...	...	...
+239	29.03	5.92	Male	No	Sat	Dinner	3
+240	27.18	2.00	Female	Yes	Sat	Dinner	2
+241	22.67	2.00	Male	Yes	Sat	Dinner	2
+242	17.82	1.75	Male	No	Sat	Dinner	2
+243	18.78	3.00	Female	No	Thur	Dinner	2
+244 rows × 7 columns
+
+df.head()
+total_bill	tip	sex	smoker	day	time	size
+0	16.99	1.01	Female	No	Sun	Dinner	2
+1	10.34	1.66	Male	No	Sun	Dinner	3
+2	21.01	3.50	Male	No	Sun	Dinner	3
+3	23.68	3.31	Male	No	Sun	Dinner	2
+4	24.59	3.61	Female	No	Sun	Dinner	4
+df.describe()
+total_bill	tip	size
+count	244.000000	244.000000	244.000000
+mean	19.785943	2.998279	2.569672
+std	8.902412	1.383638	0.951100
+min	3.070000	1.000000	1.000000
+25%	13.347500	2.000000	2.000000
+50%	17.795000	2.900000	2.000000
+75%	24.127500	3.562500	3.000000
+max	50.810000	10.000000	6.000000
+df.info()
+RangeIndex: 244 entries, 0 to 243
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   total_bill  244 non-null    float64 
+ 1   tip         244 non-null    float64 
+ 2   sex         244 non-null    category
+ 3   smoker      244 non-null    category
+ 4   day         244 non-null    category
+ 5   time        244 non-null    category
+ 6   size        244 non-null    int64   
+dtypes: category(4), float64(2), int64(1)
+memory usage: 7.4 KB
+x = df['total_bill']
+y = df['tip']
+
+sns.scatterplot(x,y)
+/usr/local/lib/python3.7/dist-packages/seaborn/_decorators.py:43: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  FutureWarning
+
+sns.boxplot(x="day", y = "tip", hue="sex", data=df, palette="muted")
+
+iris = sns.load_dataset("iris")
+
+image.png
+
+image.png
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+%matplotlib inline    
+
+iris = sns.load_dataset('iris')
+iris
+sepal_length	sepal_width	petal_length	petal_width	species
+0	5.1	3.5	1.4	0.2	setosa
+1	4.9	3.0	1.4	0.2	setosa
+2	4.7	3.2	1.3	0.2	setosa
+3	4.6	3.1	1.5	0.2	setosa
+4	5.0	3.6	1.4	0.2	setosa
+...	...	...	...	...	...
+145	6.7	3.0	5.2	2.3	virginica
+146	6.3	2.5	5.0	1.9	virginica
+147	6.5	3.0	5.2	2.0	virginica
+148	6.2	3.4	5.4	2.3	virginica
+149	5.9	3.0	5.1	1.8	virginica
+150 rows × 5 columns
+
+iris.groupby('species').size()
+species
+setosa        50
+versicolor    50
+virginica     50
+dtype: int64
+iris.describe()
+sepal_length	sepal_width	petal_length	petal_width
+count	150.000000	150.000000	150.000000	150.000000
+mean	5.843333	3.057333	3.758000	1.199333
+std	0.828066	0.435866	1.765298	0.762238
+min	4.300000	2.000000	1.000000	0.100000
+25%	5.100000	2.800000	1.600000	0.300000
+50%	5.800000	3.000000	4.350000	1.300000
+75%	6.400000	3.300000	5.100000	1.800000
+max	7.900000	4.400000	6.900000	2.500000
+type(iris)
+pandas.core.frame.DataFrame
+이 데이터셋의 자료구조는 DataFrame
+총 5개의 열(변수) 을 포함. 앞의 4개는 수치 데이터. 5번째는 각 행에 대한 그룹 정보 포함
+이 데이터셋은 총 150 개의 행과 5개의 열로 구성
+각 행들은 3개의 그룹중 하나 ( setosa, versicolor, virginica)
+각 그룹에 속한 행의 개수는 각각 50개씩 균등
+# seaborn
+sns.pairplot(iris)
+plt.title("Iris Data Analysis")
+Text(0.5, 1.0, 'Iris Data Analysis')
+
+KDE(Kernel Density Estimate) : 관찰값을 사용해서 추정되는 연속된 확률 분포
+# kde plot을 적용
+sns.pairplot(iris, hue="species", diag_kind='kde')
+
+sns.boxplot(x='species', y="petal_length", data=iris)
+
+sns.boxplot(x='species', y="petal_width", data=iris)
+
+# pandas box plot
+iris.boxplot(by="species", figsize=(16,8))
+array([[,
+        ],
+       [,
+        ]],
+      dtype=object)
